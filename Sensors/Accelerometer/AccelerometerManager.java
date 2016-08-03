@@ -1,3 +1,5 @@
+import processing.core.PApplet;
+
 import java.lang.reflect.*;
 import java.util.List;
 
@@ -31,11 +33,12 @@ public class AccelerometerManager {
   /** indicates whether or not Accelerometer Sensor is running */
   private boolean running = false;
   
+  PApplet parent;
   Context context;
   
-  
-  public AccelerometerManager(Context parent) {
-    this.context = parent;
+  public AccelerometerManager(PApplet parent) {
+    this.parent = parent;
+    this.context = parent.getActivity();
     
     try {
       shakeEventMethod =
@@ -55,8 +58,8 @@ public class AccelerometerManager {
     resume();
   }
   
-  public AccelerometerManager(Context context, int threshold, int interval) {
-    this(context);
+  public AccelerometerManager(PApplet parent, int threshold, int interval) {
+    this(parent);
     this.threshold = threshold;
     this.interval = interval;
   }
@@ -199,7 +202,7 @@ public class AccelerometerManager {
 //              listener.onShake(force);
               if (shakeEventMethod != null) {
                 try {
-                  shakeEventMethod.invoke(context, new Object[] { new Float(force) });
+                  shakeEventMethod.invoke(parent, new Object[] { new Float(force) });
                 } catch (Exception e) {
                   e.printStackTrace();
                   shakeEventMethod = null;
@@ -218,7 +221,7 @@ public class AccelerometerManager {
 //      listener.onAccelerationChanged(x, y, z);
       if (accelerationEventMethod != null) {
         try {
-          accelerationEventMethod.invoke(context, new Object[] { x, y, z });
+          accelerationEventMethod.invoke(parent, new Object[] { x, y, z });
         } catch (Exception e) {
           e.printStackTrace();
           accelerationEventMethod = null;
