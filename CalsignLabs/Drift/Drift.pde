@@ -18,7 +18,7 @@ float pointers;
 
 void setup() {
   // Use OpenGL
-  size(displayWidth, displayHeight, OPENGL);
+  fullScreen(OPENGL);
   
   // Initialize multi-touch
   mouse = new MouseTouch[10];

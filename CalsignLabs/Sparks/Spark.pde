@@ -33,13 +33,13 @@ class Spark {
     loc.add(vel);
     
     // Wrap around the screen
-    if(loc.x > width)
+    if (loc.x > width)
       loc.x -= width;
-    if(loc.x < 0)
+    if (loc.x < 0)
       loc.x += width;
-    if(loc.y > height)
+    if (loc.y > height)
       loc.y -= height;
-    if(loc.y < 0)
+    if (loc.y < 0)
       loc.y += height;
   }
   
