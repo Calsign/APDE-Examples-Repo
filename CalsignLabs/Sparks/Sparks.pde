@@ -9,8 +9,10 @@
  * when a Spark is created.
  */
 
-// Import the Android Vibrator class
+// Import the Android Vibrator
+// and Context classes
 import android.os.Vibrator;
+import android.content.Context;
 
 // List of Sparks
 ArrayList<Spark> sparks;
@@ -36,7 +38,7 @@ void draw() {
   rect(0, 0, width, height);
   
   // Cycle through the Sparks
-  for(Spark spark : sparks) {
+  for (Spark spark : sparks) {
     spark.update();
     spark.display();
   }
@@ -46,6 +48,5 @@ void mousePressed() {
   // Add new Spark
   sparks.add(new Spark());
   // Vibrate
-  ((Vibrator) getSystemService(
-    VIBRATOR_SERVICE)).vibrate(100);
+  ((Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE)).vibrate(100);
 }
