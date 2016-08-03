@@ -1,3 +1,5 @@
+import processing.core.PApplet;
+
 import java.lang.reflect.*;
 import java.util.List;
 
@@ -17,10 +19,12 @@ public class CompassManager {
   private Boolean supported;
   private boolean running = false;
   
+  PApplet parent;
   Context context;
   
-  public CompassManager(Context parent) {
-    this.context = parent;
+  public CompassManager(PApplet parent) {
+    this.parent = parent;
+    this.context = parent.getActivity();
     
     try {
       compassEventMethod =
@@ -108,7 +112,7 @@ public class CompassManager {
       
       if (compassEventMethod != null) {
         try {
-          compassEventMethod.invoke(context, new Object[] { x, y, z });
+          compassEventMethod.invoke(parent, new Object[] { x, y, z });
         } catch (Exception e) {
           e.printStackTrace();
           compassEventMethod = null;
@@ -117,7 +121,7 @@ public class CompassManager {
       
       if (directionEventMethod != null) {
         try {
-          directionEventMethod.invoke(context, new Object[] { (float) (-x * Math.PI / 180) });
+          directionEventMethod.invoke(parent, new Object[] { (float) (-x * Math.PI / 180) });
         } catch (Exception e) {
           e.printStackTrace();
           directionEventMethod = null;
