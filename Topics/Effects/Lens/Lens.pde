@@ -22,7 +22,7 @@ PImage lensImage;
 PImage lensImage2;
 
 int xx = 0;
-int yy = 0; 
+int yy = 0;
 int dx = 1;
 int dy = 1;
 
@@ -32,7 +32,7 @@ void setup() {
   // Create buffered image for lens effect
   lensEffect = createGraphics(width, height, P2D);
   
-  // Load background image 
+  // Load background image
   lensEffect.beginDraw();
   lensEffect.image(loadImage("red_smoke.jpg"), 0, 0, lensEffect.width, lensEffect.height);
   lensEffect.endDraw();

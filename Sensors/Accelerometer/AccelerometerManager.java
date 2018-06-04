@@ -92,7 +92,7 @@ public class AccelerometerManager {
       if (sensorManager != null && sensorEventListener != null) {
         sensorManager.unregisterListener(sensorEventListener);
       }
-    } 
+    }
     catch (Exception e) {
     }
   }

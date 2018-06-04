@@ -45,10 +45,8 @@ void setup() {
   distanceTable= new int[2 * w][2 * h];
   angleTable= new int[2 * w][2 * h];
   
-  for (int x = 0; x < w * 2; x ++)
-  {
-    for (int y = 0; y < h * 2; y ++)
-    {
+  for (int x = 0; x < w * 2; x++) {
+    for (int y = 0; y < h * 2; y++) {
       depth = int(ratio * textureImg.height 
                   / sqrt(float((x - w) * (x - w) + (y - h) * (y - h))));
       angle = int(0.5 * textureImg.width * atan2(float(y - h), 
@@ -105,5 +103,5 @@ void draw() {
   tunnelEffect.endDraw();
   
   // Display the results
-  image(tunnelEffect, 0, 0, width, height); 
+  image(tunnelEffect, 0, 0, width, height);
 }

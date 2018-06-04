@@ -28,7 +28,7 @@ void setup() {
   // Create blank surfaces to draw on
   for (int i = 0; i < spriteFrames.length; i ++) {
     spriteFrames[i] = createGraphics(width, height);
-  }   
+  }
 }
 
 void draw()
@@ -46,7 +46,7 @@ void draw()
   // Blit our 'bob' on the 'active' surface
   spriteFrames[surf].beginDraw();
   spriteFrames[surf].image(sprite, x + (width / 2) - 32, y + (height / 2) - 32);
-  spriteFrames[surf].endDraw();            
+  spriteFrames[surf].endDraw();
   
   // Blit the active surface to the screen
   image(spriteFrames[surf], 0, 0, width, height);
