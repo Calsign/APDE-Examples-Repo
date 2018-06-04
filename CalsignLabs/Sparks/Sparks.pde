@@ -48,5 +48,5 @@ void mousePressed() {
   // Add new Spark
   sparks.add(new Spark());
   // Vibrate
-  ((Vibrator) getActivity().getSystemService(Context.VIBRATOR_SERVICE)).vibrate(100);
+  ((Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE)).vibrate(100);
 }
