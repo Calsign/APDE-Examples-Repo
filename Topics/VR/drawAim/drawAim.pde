@@ -1,4 +1,3 @@
-
 import processing.vr.*;
 
 void setup() {
