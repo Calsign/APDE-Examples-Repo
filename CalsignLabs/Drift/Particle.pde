@@ -17,28 +17,22 @@ class Particle {
     acc.x = 0;
     acc.y = 0;
     
-    if (mousePressed && pointers > 0) {
+    if (mousePressed) {
       // Calculate average of all 
       // touch locations
       
       float mx = 0;
       float my = 0;
       
-      int count = 0;
-      
       // Add the positions
-      for (int i = 0; i < mouse.length; i ++) {
-        if (mouse[i].pressed) {
-          mx += mouse[i].x;
-          my += mouse[i].y;
-          
-          count ++;
-        }
+      for (int i = 0; i < touches.length; i ++) {
+        mx += touches[i].x;
+        my += touches[i].y;
       }
       
       // Compute average
-      mx = mx / count;
-      my = my / count;
+      mx = mx / touches.length;
+      my = my / touches.length;
       
       if (!(mx != mx || my != my)) {
         // Calculate acceleration based
