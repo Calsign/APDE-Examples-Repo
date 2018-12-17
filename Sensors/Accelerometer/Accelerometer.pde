@@ -4,7 +4,6 @@ float ax, ay, az;
 void setup() {
   accel = new AccelerometerManager(this);
   orientation(PORTRAIT);
-  noLoop();
 }
 
 void draw() {
@@ -39,5 +38,4 @@ public void accelerationEvent(float x, float y, float z) {
   ax = x;
   ay = y;
   az = z;
-  redraw();
 }

@@ -112,9 +112,9 @@ public class AccelerometerManager {
 //  /**
 //   * Configure the listener for shaking
 //   * @param threshold
-//   * 			minimum acceleration variation for considering shaking
+//   *   minimum acceleration variation for considering shaking
 //   * @param interval
-//   * 			minimum interval between to shake events
+//   *   minimum interval between to shake events
 //   */
 //  public static void configure(int threshold, int interval) {
 //    AccelerometerManager.threshold = threshold;
@@ -140,11 +140,11 @@ public class AccelerometerManager {
 //   * Configures threshold and interval
 //   * And registers a listener and start listening
 //   * @param accelerometerListener
-//   * 			callback for accelerometer events
+//   *   callback for accelerometer events
 //   * @param threshold
-//   * 			minimum acceleration variation for considering shaking
+//   *   minimum acceleration variation for considering shaking
 //   * @param interval
-//   * 			minimum interval between to shake events
+//   *   minimum interval between to shake events
 //   */
 //  public void startListening(int threshold, int interval) {
 //    configure(threshold, interval);
